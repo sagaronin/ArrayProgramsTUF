@@ -24,7 +24,7 @@ public class LeftRotate {
         for (int i = 0; i < k; i++) {
             temp[i]=arr[i];
         }
-        //shift the elemnts starting from 'k'th position
+        //shift the elements starting from 'k'th position
         for (int i =k; i < arr.length; i++) {
             arr[i-k] =arr[i];
         }

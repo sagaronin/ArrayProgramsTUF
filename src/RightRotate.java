@@ -42,11 +42,11 @@ public class RightRotate {
     public static void rightRotateByKPlacesBetter(int arr[], int k) {
         // Take the mod value because no matter the original value of k, we will have to rotate by mod value of it.
         k = k % arr.length;
-        reverse(arr, arr.length-k, arr.length-1);
+        reverse(arr, arr.length-k, arr.length-1); // k to n
+        System.out.println("n-k elements rotation - "+Arrays.toString(arr));
+        reverse(arr, 0, arr.length-k-1); // 0 to k
         System.out.println("first k elements rotation - "+Arrays.toString(arr));
-        reverse(arr, 0, arr.length-k-1);
-        System.out.println("remaining n-k elements rotation - "+Arrays.toString(arr));
-        reverse(arr, 0, arr.length-1);
+        reverse(arr, 0, arr.length-1);// 0 to n
         System.out.println("Optimal solution - "+Arrays.toString(arr));
     }
     public static void reverse(int arr[], int start, int end){
@@ -57,11 +57,5 @@ public class RightRotate {
             start++;
             end--;
         }
-    }
-      
-        
-    
-
-
-    
+    }    
 }

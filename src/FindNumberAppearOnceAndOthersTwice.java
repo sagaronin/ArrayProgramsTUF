@@ -4,8 +4,8 @@ import java.util.Map;
 public class FindNumberAppearOnceAndOthersTwice {
     public static void main(String[] args) {
         int arr[]={1,1,2,3,3,4,4,2,6};
-        //System.out.println("Number appearing once and others twice is(Brute Force) : "+FindNumberAppearOnceAndOthersTwice.findNumberAppearOnceAndOthersTwiceBrute(arr));
-        //System.out.println("Number appearing once and others twice is(Better) : "+FindNumberAppearOnceAndOthersTwice.findNumberAppearOnceAndOthersTwiceBetter(arr));
+        System.out.println("Number appearing once and others twice is(Brute Force) : "+FindNumberAppearOnceAndOthersTwice.findNumberAppearOnceAndOthersTwiceBrute(arr));
+        System.out.println("Number appearing once and others twice is(Better) : "+FindNumberAppearOnceAndOthersTwice.findNumberAppearOnceAndOthersTwiceBetter(arr));
         System.out.println("Number appearing once and others twice is(Optimal) : "+FindNumberAppearOnceAndOthersTwice.findNumberAppearOnceAndOthersTwiceOptimal(arr));
     }
     public static int findNumberAppearOnceAndOthersTwiceBrute(int[] arr) {

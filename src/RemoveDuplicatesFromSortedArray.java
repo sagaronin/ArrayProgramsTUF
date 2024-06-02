@@ -18,10 +18,12 @@ public class RemoveDuplicatesFromSortedArray {
         System.out.print("}");
         */
         // optimal solution
-        n=removeDuplicateOptimal(arr);
+        n=removeDuplicateOptimal2(arr);
         System.out.print("Unique elements array - {");
         for (int i = 0; i < n; i++) {
-            System.out.print(arr[i]+", ");
+            System.out.print(arr[i]);
+            if(i+1<n)
+                System.out.print(", ");
         }
         System.out.print("}");
         
@@ -47,19 +49,25 @@ public class RemoveDuplicatesFromSortedArray {
         int j=0;
         for (int i = 1; i < arr.length; i++) {
             if(arr[j]<arr[i]){
-                // this is logic changes the actual array elements
-                //j++;
-                //arr[j]=arr[i];
-
-                //This logic keeps the array elements same with swapping logic
+                // this logic changes the actual array elements
                 j++;
-                arr[j] = arr[j]+arr[i];
-                arr[i] = arr[j]-arr[i];
-                arr[j] = arr[j]-arr[i];
+                arr[j]=arr[i];
             }
         }
         System.out.println("modified array - "+Arrays.toString(arr));
-        return j;
+        return j+1;
+    }
+
+    public static int removeDuplicateOptimal2(int[] arr) {
+        int j=0;
+        for (int i = 1; i < arr.length; i++) {
+            if(arr[j]!=arr[i]){
+                arr[j+1] = arr[i];
+                j++;
+            }
+        }
+        System.out.println("modified array 2 - "+Arrays.toString(arr));
+        return j+1;
     }
 
 }

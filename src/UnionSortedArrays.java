@@ -8,7 +8,7 @@ public class UnionSortedArrays {
     public static void main(String[] args) {
         int arr1[]={1,2,2,4,5,6,6,7};
         int arr2[]={4,5,6,7,8,9};
-        //UnionSortedArrays.unionBruteForce(arr1, arr2);
+        UnionSortedArrays.unionBruteForce(arr1, arr2);
         UnionSortedArrays.unionOptimal(arr1, arr2);
 
     }

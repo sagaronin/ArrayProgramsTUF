@@ -44,7 +44,7 @@ public class MoveZeroToEnd {
                 if (arr[i] != 0) {
                     arr[j] = arr[i];
                     arr[i] = 0;
-                    j = j + 1;
+                    j++;
                 }
             }
             System.out.println("Optimal : " + Arrays.toString(arr));

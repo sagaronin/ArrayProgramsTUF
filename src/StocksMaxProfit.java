@@ -7,12 +7,15 @@ public class StocksMaxProfit {
         int profit=0, min=a[0];
         for (int i = 1; i < a.length; i++) {
             //cost to buy share
+            // you have to buy share before selling it 
+            // hence assume the cost to buy is
+            // current value minus the min value of share bought in past
             int cost= a[i] - min;
             //if this cost is greater than profit, change profit to that value
             if(profit < cost){
                 profit= cost;
             }
-            //if a[i] is less than min, thennnn change value of min to a[i]
+            //if a[i] is less than min, then change value of min to a[i]
             if(a[i]<min){
                 min= a[i];
             }
