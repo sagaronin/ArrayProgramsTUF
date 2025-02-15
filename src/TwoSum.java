@@ -48,17 +48,17 @@ public class TwoSum {
     // equal to target sum
     public static boolean twoSumOptimal(int[] arr, int targetSum) {
         Arrays.sort(arr);
-        int i = 0, j = arr.length - 1;
-        while (i < j) {
-            int sum = arr[i] + arr[j];
+        int l = 0, r = arr.length - 1;
+        while (l < r) {
+            int sum = arr[l] + arr[r];
             if ( sum == targetSum) {
-                System.out.println("First Element : "+arr[i]);
-                System.out.println("Second Element : "+arr[j]);
+                System.out.println("First Element : "+arr[l]);
+                System.out.println("Second Element : "+arr[r]);
                 return true;
             } else if (sum < targetSum) {
-                i++;
+                l++;
             }else if(sum > targetSum){
-                j--;
+                r--;
             }
 
         }

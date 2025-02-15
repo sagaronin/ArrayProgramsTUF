@@ -5,6 +5,7 @@ public class LeadersInArray {
     public static void main(String[] args) {
         int arr[]={10,22,12,3,0,6};
         LeadersInArray.findLeadersBrute(arr);
+        LeadersInArray.findLeadersoptimal(arr);
     }
     public static void findLeadersBrute(int[] arr) {
         List<Integer> list = new ArrayList<Integer>();
@@ -27,7 +28,7 @@ public class LeadersInArray {
     public static void findLeadersoptimal(int[] arr) {
         int max= Integer.MIN_VALUE;
         List<Integer> list = new ArrayList<Integer>();
-        for (int i = arr.length-1; i >=0 ; i++) {
+        for (int i = arr.length-1; i >=0 ; i--) {
             if(arr[i]>max){
                 max=arr[i];
                 list.add(max);

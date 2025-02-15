@@ -43,6 +43,7 @@ public class MajorityElement {
         for (int i = 1; i < arr.length; i++) {
             if(count==0){
                 element = arr[i];
+                System.out.println("Element now - "+element);
             }
             if(element==arr[i]){
                 count++;

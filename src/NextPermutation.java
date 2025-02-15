@@ -9,12 +9,13 @@ public class NextPermutation {
 
     }
     public static Integer[] nextPermutation(Integer[] elements) {
-        //find the first element which is smaller element starting from last elements
+        //find the first element which is smaller element compare to its next neighbor starting from last elements
         int index=-1;
         for(int i = elements.length-2;i>=0;i--){
+            System.out.println("is "+elements[i]+" < "+elements[i+1] +": "+(elements[i]<elements[i+1]));
             if(elements[i]<elements[i+1]){
                 index = i;
-                System.out.println("break at: "+elements[i]);
+                System.out.println("break at index: "+i);
                 break;
             }
         }
@@ -27,7 +28,7 @@ public class NextPermutation {
         // if the index!=-1 means there is next permutation available.
         // so in order to find the next permutation in this series
         // find the smallest number which is greater than element at index, 
-        // starting from index to the length of array(index->n)
+        // starting from index+1 to the length of array(index->n)
         //Integer elements[]={2,1,5,4,3,0,0};
         int j=index+1;
         int min = Integer.MAX_VALUE, minIndex=-1;
@@ -40,14 +41,14 @@ public class NextPermutation {
             }
             j++;
         }
-        System.out.println("Min: "+min);
+        System.out.println("smallest number greater than "+elements[index]+" is: "+min);
         //swap the elements at minIndex and index location
         int temp = elements[minIndex];
         elements[minIndex] = elements[index];
         elements[index] = temp;
         System.out.println("After swap - "+Arrays.toString(elements));
 
-        // now reverse the elements starting from index to array length in ASC order.
+        // now sort the elements starting from index to array length in ASC order.
         int length = elements.length-index;
         for (int i = 0; i < length / 2; i++)
         {

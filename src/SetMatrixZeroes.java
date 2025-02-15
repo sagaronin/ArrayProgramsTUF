@@ -79,7 +79,7 @@ public class SetMatrixZeroes {
 
     private static void setMatrixZeroAlternateBetter(int arr[][]) {
         boolean frow = false, fcol = false;
-        // set markers in first row and first column
+        // 1.set markers in first row and first column
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[0].length; j++) {
                 if (arr[i][j] == 0) {
@@ -93,7 +93,7 @@ public class SetMatrixZeroes {
             }
         }
 
-        // replace zero values in inner matrix
+        // 2.replace zero values in inner matrix
         for (int i = 1; i < arr.length; i++) {
             for (int j = 1; j < arr[0].length; j++) {
                 if (arr[0][j] == 0 || arr[i][0] == 0) {
@@ -102,14 +102,14 @@ public class SetMatrixZeroes {
             }
         }
 
-        // if there was zero in first row in original array then
+        // 3.a.if there was zero in first row in original array then
         if (frow)
-            for (int i = 0; i < arr.length; i++)
+            for (int i = 0; i < arr[0].length; i++)
                 arr[0][i] = 0;
 
-        // if there was zero in first column in original array then
+        // 3.b.if there was zero in first column in original array then
         if (fcol)
-            for (int i = 0; i < arr[0].length; i++)
+            for (int i = 0; i < arr.length; i++)
                 arr[i][0] = 0;
 
     }

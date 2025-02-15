@@ -3,7 +3,7 @@ public class FindMissing {
         int arr[]={2,3,4,5};
         int n=5;
         //System.out.println("Missing number(Brute) : "+FindMissing.findMissingBrute(arr, n));
-        //System.out.println("Missing number(Better) : "+FindMissing.findMissingBetter(arr, n));
+        System.out.println("Missing number(Better) : "+FindMissing.findMissingBetter(arr, n));
         System.out.println("Missing number(Better) : "+FindMissing.findMissingOptimal(arr, n));
     }
 
@@ -16,9 +16,9 @@ public class FindMissing {
                     break;
                 }
             }
-            if(flag==0){
+            if(flag==0)
                 return i;
-            }
+            
         }
         return -1;
     }

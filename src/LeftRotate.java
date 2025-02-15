@@ -4,8 +4,8 @@ public class LeftRotate {
     public static void main(String[] args) {
         int arr[]={1,2,3,4,5,6,7};
         //LeftRotate.leftRotateByOneOptimal(arr);
-        LeftRotate.leftRotateByKPlacesBruteForce(arr, 2);
-        //LeftRotate.leftRotateByKPlacesBetter(arr, 3);
+        //LeftRotate.leftRotateByKPlacesBruteForce(arr, 3);
+        LeftRotate.leftRotateByKPlacesBetter(arr, 3);
     }
 
     public static void leftRotateByOneOptimal(int arr[]) {
@@ -28,6 +28,7 @@ public class LeftRotate {
         for (int i =k; i < arr.length; i++) {
             arr[i-k] =arr[i];
         }
+        System.out.println("shift the elements starting from 'k'th position - "+Arrays.toString(arr));
         //put the first "k" elements back in original array
         for (int i = arr.length-k; i < arr.length; i++) {
             arr[i]=temp[i-(arr.length-k)];
@@ -36,6 +37,7 @@ public class LeftRotate {
     }
 
     public static void leftRotateByKPlacesBetter(int arr[], int k) {
+        k = k % arr.length;
         reverse(arr, 0, k-1);
         System.out.println("first k elements rotation - "+Arrays.toString(arr));
         reverse(arr, k, arr.length-1);

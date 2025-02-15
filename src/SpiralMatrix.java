@@ -17,7 +17,7 @@ public class SpiralMatrix {
         int top = 0, bottom = n - 1;
         int left = 0, right = m - 1;
         List<Integer> list = new ArrayList<Integer>();
-        while (left <= right && top <= right) {
+        while (left <= right && top <= bottom) {
             // print left-right
             for (int i = left; i <= right; i++) {
                 list.add(arr[top][i]);

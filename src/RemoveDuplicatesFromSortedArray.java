@@ -46,6 +46,7 @@ public class RemoveDuplicatesFromSortedArray {
     }
 
     public static int removeDuplicateOptimal(int[] arr) {
+        //int arr[] = { 0, 1, 1, 2, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9, 10, 10 };
         int j=0;
         for (int i = 1; i < arr.length; i++) {
             if(arr[j]<arr[i]){
@@ -59,11 +60,12 @@ public class RemoveDuplicatesFromSortedArray {
     }
 
     public static int removeDuplicateOptimal2(int[] arr) {
+        //int arr[] = { 0, 1, 1, 2, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9, 10, 10 };
         int j=0;
         for (int i = 1; i < arr.length; i++) {
             if(arr[j]!=arr[i]){
-                arr[j+1] = arr[i];
                 j++;
+                arr[j] = arr[i];                
             }
         }
         System.out.println("modified array 2 - "+Arrays.toString(arr));

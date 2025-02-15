@@ -1,6 +1,6 @@
 class Smallest{
     public static void main(String[] args) {
-        int elements[]={11,22,40,6,10,5,9,40};
+        int elements[]={11,22,40,6,10,5,9,40,4};
         
         System.out.println("Smallest - "+Smallest.SmallestNum(elements));
         System.out.println("Second Smallest - "+Smallest.secondSmallest(elements));
